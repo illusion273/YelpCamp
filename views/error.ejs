@@ -1,11 +1,9 @@
-<% layout('layouts/boilerplate') %>
-    <div class="d-flex justify-content-center align-self-center mx-auto">
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <div class="col-6 offset-3">
         <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading">Error <%= err.statusCode %>!</h4>
-            <p>
-                <%= err.message %>
-            </p>
-            <hr>
-            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+            <h4 class="alert-heading"><%=err.message%></h4>
+            <p><%= err.stack %></p>
         </div>
     </div>
+</div>

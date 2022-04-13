@@ -1,54 +1,53 @@
-<% layout('layouts/boilerplate') %>
-    <div class="container px-3 py-2 my-auto shadow rounded" style="max-width:420px;">
-        <form action="/campgrounds" method="POST" class="needs-validation" novalidate>
-            <div class="mb-2">
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="campground[title]" class="form-control" placeholder="Username"
-                    required>
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/campgrounds" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-            <div class="mb-2">
-                <label for="image">Image:</label>
-                <input type="text" id="image" name="campground[image]" class="form-control" placeholder="image"
-                    required>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-            <div class="mb-2">
-                <label for="price">Price:</label>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="campground[image]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Campground Price</label>
                 <div class="input-group">
-                    <span class="input-group-text">$</span>
-                    <input type="text" id="price" name="campground[price]" class="form-control" placeholder="price"
-                        required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="campground[price]" required>
                 </div>
-            </div>
-            <div class="mb-2">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="campground[location]" class="form-control" placeholder="location"
-                    required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-            <div class="">
-                <label for="description">Description:</label>
-                <textarea id="description" name="campground[description]" class="form-control" placeholder="description"
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="campground[description]"
                     required></textarea>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-            <div class="text-center mt-2 ">
-                <button class="btn btn-primary" type="submit">Add Campground</button>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Campground</button>
             </div>
         </form>
+        <a href="/campgrounds">All Campgrounds</a>
     </div>
-
-
-    <!-- <a href="/campgrounds">All campgrounds</a> -->
+</div>
